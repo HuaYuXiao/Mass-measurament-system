@@ -1,7 +1,7 @@
 # mass-measurament system-based-on-Newton-s-Second-Law
 SUSTech SDM273 Intelligent Sensing and Signal Processing
 
-在本项目中，我们将基于牛顿第二定律搭建一个质量测量系统。
+在本项目中，我们将基于牛顿第二定律搭建一个质量测量系统。并在Arduino UNO上实现。
 
 ## 基本原理
 由牛顿第二定律可知，在物体所受合外力 $F$ 不变的情况下，质量 $m$ 与加速度 $a$ 成反比例关系：
@@ -46,7 +46,7 @@ $$
 m g - \mu M g = M a
 $$
 
-设 $a_\mu = \mu g$ ，我们可以通过多次测量取平均值的方法得到 $a<sub>\mu</sub> = \mu g$ 。对于给定的 $M_i$ 和 $a_i$ ：
+suppose $a_\mu = \mu g$ ，我们可以通过多次测量取平均值的方法得到。对于给定的 $M_i$ 和 $a_i$ ：
 
 $$
 a_\mu = \frac{1}{n} \sum_{i=0}^n (\frac{m}{M_i}-a_i)
