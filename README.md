@@ -1,4 +1,4 @@
-# mass-measurament system-based-on-Newton-s-Second-Law
+# Mass-measurament system-based-on-Newton-s-Second-Law
 SUSTech SDM273 Intelligent Sensing and Signal Processing
 
 In this project, we will build a mass measurement system based on Newton's second law. And implemented on Arduino UNO.
