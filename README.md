@@ -63,7 +63,7 @@ The final relationship curve will be fitted by Origin or Matlab.
 
 ### BWT61CL 
 
-This product is a high-performance three-dimensional motion attitude measurement system based on MEMS technology. It contains motion sensors such as a three-axis gyroscope, a three-axis accelerometer, etc.
+This product is a high-performance three-dimensional motion attitude measurement system based on MEMS technology. It contains motion sensors such as a 3-axis gyroscope, a 3-axis accelerometer, etc.
 
 ![image](https://user-images.githubusercontent.com/117464811/235698586-47b5af8e-e2dc-4755-a346-1fb0423a7af9.png)
 
