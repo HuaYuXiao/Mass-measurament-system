@@ -1,58 +1,57 @@
 # mass-measurament system-based-on-Newton-s-Second-Law
 SUSTech SDM273 Intelligent Sensing and Signal Processing
 
-在本项目中，我们将基于牛顿第二定律搭建一个质量测量系统。并在Arduino UNO上实现。
+In this project, we will build a mass measurement system based on Newton's second law. And implemented on Arduino UNO.
 
-## 基本原理
-由牛顿第二定律可知，在物体所受合外力 $F$ 不变的情况下，质量 $m$ 与加速度 $a$ 成反比例关系：
+## Experimental setup
+
+As shown in the figure below, the trolley is placed on a smooth horizontal plate, a thin rope is tied at the front end, the other end of the rope, and the other end of the rope is hung over the fixed pulley to hang a small barrel, and heavy objects can be placed in the barrel.
+
+![image](https://user-images.githubusercontent.com/117464811/232413380-7defca28-a844-4ccb-a46d-6de98be35083.png)
+
+## Basic principle
+
+Newton's second law shows that mass $m$ is inversely proportional to acceleration $a$ when the external force on an object is $F$ unchanged:
 
 $$
 F = ma
 $$
 
-由此我们联想到高中物理实验“加速度与质量的关系”。在该实验中，通过改变物体质量，测量比较物体加速度，由此验证牛顿第二定律。而我们想要得到物体质量，就可以通过测量加速度得到。
+We think of the high school physics experiment "The Relationship between Acceleration and Mass". In this experiment, Newton's second law is verified by changing the mass of the object and measuring the acceleration of the comparison object. And if we want to get the mass of the object, we can get it by measuring the acceleration.
 
-## 实验装置
-
-如下图所示，小车放在光滑水平板上，前端系一条细绳，绳的另一端，绳的另一端跨过定滑轮挂一个小桶，桶中可放重物。
-
-![image](https://user-images.githubusercontent.com/117464811/232413380-7defca28-a844-4ccb-a46d-6de98be35083.png)
-
-## 公式推导
-
-小桶和重物所受的重力 $mg$ ，近似等于细绳上的拉力 $T$ ，也就是使小车做匀加速运动的力：
+The gravity of $mg$ on the keg and heavy objects is approximately equal to the pull force on the string $T$ , which is the force that makes the trolley accelerate evenly:
 
 $$
 T \approx mg
 $$
 
-**注意**：条件是桶和重物的质量要比小车的质量小很多。
+**Note**: The condition is that the mass of the barrel and heavy objects is much smaller than the mass of the trolley.
 
-在理想情况下，小车的总质量 $M% 其加速度 $a$ 成反比例关系：
+In an ideal case, the total mass of the trolley is $M% and its acceleration is inversely proportional to $a$ relationship:
 
 $$
 M = \frac{F}{a}
 $$
 
-在本实验中，摩擦力 $f$ 不可忽略。由牛顿第二定律可知，总的公式可以如下表示：
+In this experiment, the friction force $f$ is not negligible. From Newton's second law, the general formula can be expressed as follows:
 
 $$
 T - f = M a
 $$
 
-假设滚动摩擦系数为 $\mu$ ，将公式展开得到：
+Assuming that the rolling friction coefficient is $mu$, expand the formula to get:
 
 $$
 m g - \mu M g = M a
 $$
 
-suppose $a_\mu = \mu g$ ，我们可以通过多次测量取平均值的方法得到。对于给定的 $M_i$ 和 $a_i$ ：
+suppose $a_mu = mu g$ , which we can get by averaging multiple measurements. For a given $M_i$ and $a_i$ :
 
 $$
 a_\mu = \frac{1}{n} \sum_{i=0}^n (\frac{m}{M_i}-a_i)
 $$
 
-将求得的 $a_\mu$ 代入公式得到测量小车总质量 $M$ 的最终表达式：
+Substituting the resulting $a_mu$ into the formula yields the final expression that measures the total mass of the trolley $M$:
 
 $$
 M = \frac{m g}{a_\mu + a}
