@@ -2,7 +2,9 @@ Material
 
 ## J2183 mechanical rail trolley
 
-![image](https://user-images.githubusercontent.com/117464811/236357308-cadfe68d-37af-49d2-aae3-71ec8d5f0941.png)
+The J2183 rail trolley is a student group experimental instrument designed and manufactured according to the requirements of the full-time secondary school physics syllabus. The trolley moves on the aluminum profile track, which reduces friction and solves the problem of misalignment when the trolley moves, improving the accuracy and operability of the experiment.
+
+![O1CN01dUVveL1tU58YCZxAd_!!2208019355904](https://user-images.githubusercontent.com/117464811/236357514-d6f04303-05f5-4ad6-b52c-a88b53af9457.jpg)
 
 <https://detail.tmall.com/item.htm?id=676435988063&skuId=4859649928284&spm=a1z0d.6639537/tb.1997196601.14.14587484K8lDAh>
 
