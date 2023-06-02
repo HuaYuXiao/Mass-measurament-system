@@ -83,9 +83,15 @@ $$
 
 ### Data import
 
+#### .txt preprocessing
+
 The data we obtain from the upper computer provided by **WIT motion** is in **.txt** form. Each time we run a test sample, there will be a new **.txt** file generated. However, only the newest one is necessary for our experienment. Therefore, we create a function called `deltxt()` to keep the specific **.txt** file.
 
 ```python
+import os
+import glob
+
+
 def deltxt():
     txt_files = glob.glob("*.txt")
 
@@ -96,6 +102,8 @@ def deltxt():
             os.remove(file)
 ```
 
+#### .txt to Dataframe
+
 We wish to process the **.txt** file in `Dataframe` form. Note that the first line of the **.txt** file is of 1 column. If we directly import the **.txt** file into `Datframe`, there must be bugs for reading **ax(g)**, **ay(g)** and **az(g)**. 
 
 ![无标题](https://github.com/HuaYuXiao/Mass-measurament-system-based-on-Newton-s-Second-Law/assets/117464811/6c3c28b1-649a-44b9-b238-24ab7dda268c)
@@ -103,6 +111,11 @@ We wish to process the **.txt** file in `Dataframe` form. Note that the first li
 Therefore, before we import the file into `Dataframe`, we have to delete the first line of the file. Also note that the file is split by **Tab**.
 
 ```python
+import pandas as pd
+import fileinput
+import os
+
+
 def txt2df():
     file_list = [file for file in os.listdir() if file.endswith('.txt')]
 
@@ -116,6 +129,85 @@ def txt2df():
 
     return df
 ```
+
+#### Valid data section
+
+The time series data we read from the `Dataframe` is the whole running process. However, the section we need is that before the sudden slump. There is a slump because the cart hits the spring and the accerlaration and velocity decreased sharply.
+
+![1_1](https://github.com/HuaYuXiao/Mass-measurament-system-based-on-Newton-s-Second-Law/assets/117464811/fe789af3-fa1a-489d-a0f9-42f5fad6743e)
+
+We set a threshold for the valid data. Once the **ay(g)** is below -0.1, then we define the measuring process is finished. 
+
+```python
+import pandas as pd
+
+
+def find(df):
+# 骤降的阈值，根据实际情况调整
+    threshold = -0.1  
+    index_of_drop = df[df < threshold].index[0]
+    df = df.loc[:index_of_drop-10]
+
+    return df
+```    
+
+#### Data filter
+
+In this project, we apply `KalmanFilter`, `MeanFilter` and `KalmanSmoother` to filter data.
+
+```python
+import matplotlib.pyplot as plt
+from pykalman import KalmanFilter
+from tsmoothie.smoother import *
+import pandas as pd
+
+
+def filter(df):
+    _, axs = plt.subplots(2, 2)
+
+    plot(df, axs[0, 0],'original')
+
+    measurements = df.values
+
+    filter = KalmanFilter()
+    filtered_state_means, _ = filter.filter(measurements)
+    filtered_values = filtered_state_means[:, 0]
+    df = pd.DataFrame(filtered_values, columns=['Filtered_Data'])
+
+    plot(df, axs[0, 1],'KalmanFilter')
+
+    df = df.rolling(20, center=True).mean()
+
+    plot(df, axs[1, 0],'MeanFilter')
+
+    smoother = KalmanSmoother(component='level_trend',component_noise={'level': 0.1, 'trend': 0.1}) 
+    df = smoother.smooth(df).smooth_data.T
+
+    plot(df, axs[1, 1],'KalmanSmoother')
+
+    plt.show()
+
+    df = df[5:-5]
+
+    return df
+
+
+def plot(df,ax,title):
+    ax.plot(df)
+    ax.set_xlabel('Time')
+    ax.set_ylabel('ay(m/s^2)')
+    ax.set_title(title)
+```
+
+The figure below reflects the effect of the three filter methods, compared to the original data.
+
+![filter](https://github.com/HuaYuXiao/Mass-measurament-system-based-on-Newton-s-Second-Law/assets/117464811/4a445057-2b47-401d-84b7-c869b84383ac)
+
+### Model fitting
+
+
+
+
 
 
 
