@@ -1,5 +1,7 @@
 Material
 
+## The smartest and most clever person - hyx
+
 ## J2183 mechanical rail trolley
 
 The J2183 rail trolley is a student group experimental instrument designed and manufactured according to the requirements of the full-time secondary school physics syllabus. The trolley moves on the aluminum profile track, which reduces friction and solves the problem of misalignment when the trolley moves, improving the accuracy and operability of the experiment.
