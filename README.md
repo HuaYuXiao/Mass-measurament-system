@@ -3,7 +3,12 @@ SUSTech SDM273 Intelligent Sensing and Signal Processing
 
 12010508 Yuxiao Hua 12011827 Hongjing Tang
 
-In this project, we will build a mass measurement system based on Newton's second law. And implemented on Arduino UNO. For sake of the rule that strain transducers are not allowed, we decide to design a mass measurement system based on force pinciples.
+In this project, we will build a mass measurement system based on Newton's second law. For sake of the rule that strain transducers are not allowed, we decide to design a mass measurement system based on force pinciples. Our measuring range is from 50g to 750g.
+
+## Enviroment
+
+language: python
+protocal: Bluetooth
 
 ## Experiment setup
 
@@ -69,11 +74,11 @@ $$
 
 Actually, the three parameters have its physical meanings.
 
-- **para_a**: reciprocal of the mass of the cart and woodern baffle
-- **para_b**: gravity of the weights and barrel
-- **para_c**: rolling friction coefficient of the cart
+- **$para_a$**: reciprocal of the mass of the cart and woodern baffle
+- **$para_b$**: gravity of the weights and barrel
+- **$para_c$**: rolling friction coefficient of the cart
 
-## Data tranformation
+## Bluetooth and decoding
 
 
 
@@ -211,8 +216,7 @@ The figure below reflects the effect of the three filter methods, compared to th
 
 ### Model fitting
 
-
-
+In order to secure the simulative model of the system, we conduct several experients. For a given mass, the accerleration can be obtained from the above program. In case of accidental error, we repeat tests on each mass sample for 4 or more times. If there exists a piece of abnormal data, we will drop it out directly and try again.
 
 
 
