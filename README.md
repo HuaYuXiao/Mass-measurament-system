@@ -29,7 +29,7 @@ $$
 T \approx mg
 $$
 
-**Note**: The condition is that the mass of the barrel and heavy objects is much smaller than the mass of the trolley.
+**Note**: The condition is that the mass of the barrel and weights is much smaller than the mass of the trolley.
 
 In an ideal case, the total mass of the trolley is $M% and its acceleration is inversely proportional to $a$ relationship:
 
@@ -66,6 +66,12 @@ Therefore, the whole formula for the mass measuring system is given as below. Wh
 $$
 M = f(a) = para_a + \frac{para_b}{para_c + a}
 $$
+
+Actually, the three parameters have its physical meanings.
+
+- **para_a**: reciprocal of the mass of the cart and woodern baffle
+- **para_b**: gravity of the weights and barrel
+- **para_c**: rolling friction coefficient of the cart
 
 ## Data tranformation
 
