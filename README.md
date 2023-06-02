@@ -7,8 +7,8 @@ In this project, we will build a mass measurement system based on Newton's secon
 
 ## Enviroment
 
-language: python
-protocal: Bluetooth
+- language: python
+- protocal: Bluetooth
 
 ## Experiment setup
 
@@ -218,7 +218,34 @@ The figure below reflects the effect of the three filter methods, compared to th
 
 In order to secure the simulative model of the system, we conduct several experients. For a given mass, the accerleration can be obtained from the above program. In case of accidental error, we repeat tests on each mass sample for 4 or more times. If there exists a piece of abnormal data, we will drop it out directly and try again.
 
+![image](https://github.com/HuaYuXiao/Mass-measurament-system-based-on-Newton-s-Second-Law/assets/117464811/49a7b55f-da20-4b28-a096-0db25ee001d1)
 
+
+```python
+import pandas as pd
+from scipy.optimize import curve_fit
+import matplotlib.pyplot as plt
+
+
+# 定义拟合函数
+def func(x, a, b, c):
+    return a +b / (x + c)
+
+
+if __name__ == '__main__':
+    # 读取CSV文件
+    df = pd.read_csv('map.csv')
+
+    # 获取x和y数据列
+    x_data = df['a_avg'].values
+    y_data = df['m'].values
+
+    # 使用curve_fit进行拟合
+    popt, pcov = curve_fit(func, x_data, y_data)
+
+    # 提取拟合参数
+    a_fit, b_fit, c_fit = popt
+```
 
 
 
