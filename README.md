@@ -80,10 +80,13 @@ Actually, the three parameters have its physical meanings.
 
 ## Bluetooth and decoding
 
+### Bluetooth protocol
 
 
 
 
+
+### Data decoding
 
 
 
@@ -216,10 +219,11 @@ The figure below reflects the effect of the three filter methods, compared to th
 
 ### Model fitting
 
-In order to secure the simulative model of the system, we conduct several experients. For a given mass, the accerleration can be obtained from the above program. In case of accidental error, we repeat tests on each mass sample for 4 or more times. If there exists a piece of abnormal data, we will drop it out directly and try again.
+In order to secure the simulative model of the system, we conduct several experients. For a given mass, the accerleration can be obtained from the above program. In case of accidental error, we repeat tests on each mass sample for 4 or more times. If there exists a piece of abnormal data, we will drop it out directly and try again. After getting the neccesary mass and accerlation data pair, we write it into an **.csv** file. 
 
 ![image](https://github.com/HuaYuXiao/Mass-measurament-system-based-on-Newton-s-Second-Law/assets/117464811/49a7b55f-da20-4b28-a096-0db25ee001d1)
 
+Since our model is non-linear and negative relative, we apply `curve_fit` to carry out model fitting work. `func()` defines the object function form, which has been explained before.
 
 ```python
 import pandas as pd
@@ -229,7 +233,7 @@ import matplotlib.pyplot as plt
 
 # 定义拟合函数
 def func(x, a, b, c):
-    return a +b / (x + c)
+    return a + b / (x + c)
 
 
 if __name__ == '__main__':
@@ -241,21 +245,31 @@ if __name__ == '__main__':
     y_data = df['m'].values
 
     # 使用curve_fit进行拟合
-    popt, pcov = curve_fit(func, x_data, y_data)
+    popt, _ = curve_fit(func, x_data, y_data)
 
     # 提取拟合参数
     a_fit, b_fit, c_fit = popt
 ```
 
+The fitted parameters are shown as follows:
+
+- $para_a$ =  -243.8885141731842
+- $para_b$ =  311.271972539197
+- $para_c$ =  0.04298453883976162
+
+From the chart we can find that almost every piece of data is relatively close to the fitted curve, which reflects that out recorded sample is properly tested.
+
+![fit_2](https://github.com/HuaYuXiao/Mass-measurament-system-based-on-Newton-s-Second-Law/assets/117464811/1868ca95-bb99-4187-b0af-05a41eba5073)
+
+## Results and analysis
 
 
 
 
 
 
+## Extensions
 
+In order to improeve the extent of automation of the system, we design a GUI window to display the measuring results on the screen, including accerlation and mass. Once **analysis** button is pressed on, the program will start to record data from the sensor. After few seconds, the results will be displayed on the text area. If we want to start another sample test, just press **analysis** will be enough. We do not need to press **Ctrl+F5** on keyboard anymore!
 
-
-
-
-
+![image](https://github.com/HuaYuXiao/Mass-measurament-system-based-on-Newton-s-Second-Law/assets/117464811/e27b5bb8-7146-4bc3-a2b0-86804d267453)
