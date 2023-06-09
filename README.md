@@ -82,8 +82,9 @@ Actually, the three parameters have its physical meanings.
 
 ### Bluetooth protocol
 
+After connecting the sensor to the computer via Bluetooth, we can open the serial monitor to observe the sensor data received through Bluetooth. The data is displayed in hexadecimal format, as shown in the diagram below.
 
-
+According to the official technical documentation, the header of the acceleration information packet is 0x51, and the following 6 bits store the low and high bits of the acceleration information for the x, y, and z axes.
 
 
 ### Data decoding
