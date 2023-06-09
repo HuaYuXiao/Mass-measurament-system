@@ -16,12 +16,13 @@ As shown in the figure below, the trolley is placed on a smooth horizontal plate
 
 ![image](https://github.com/HuaYuXiao/Mass-measurament-system-based-on-Newton-s-Second-Law/assets/117464811/a6031ac0-ae3d-47d6-a924-3ca410e9f9f8)
 
-## Hardware design
+### Hardware design
 
 Since the cargo compartment of our carrier cart is small and cannot accommodate the water bottle being tested, we utilized AutoCAD to design a model. We then used laser-cut wooden boards to create a bottle holder. The upper part of this holder can accommodate the water bottle, while the lower part can house the accelerometer sensor. The entire assembly fits well inside the cart's cargo compartment.
-![image](https://github.com/HuaYuXiao/Mass-measurament-system-based-on-Newton-s-Second-Law/assets/100033111/76dfc7e5-bce1-4545-a667-63b0d37e7726)
-![110e287ce7c80b546ad7416968514ad](https://github.com/HuaYuXiao/Mass-measurament-system-based-on-Newton-s-Second-Law/assets/100033111/f2e69b7a-8d75-4f26-96da-dfcb9e2a0902)
 
+![image](https://github.com/HuaYuXiao/Mass-measurament-system-based-on-Newton-s-Second-Law/assets/100033111/76dfc7e5-bce1-4545-a667-63b0d37e7726)
+
+![110e287ce7c80b546ad7416968514ad](https://github.com/HuaYuXiao/Mass-measurament-system-based-on-Newton-s-Second-Law/assets/100033111/f2e69b7a-8d75-4f26-96da-dfcb9e2a0902)
 
 ## Basic principle
 
@@ -298,8 +299,6 @@ The main reasons for the occurrence of errors are as follows:
 2. The model extrapolates mass, a quantity with significant variation, based on a small change in acceleration. In the experiments, even minor disturbances are amplified, such as noise generated during each run.
 
 3. The experiments are subject to various interferences, leading to significant random errors.
-
-
 
 ## Extensions
 
