@@ -1,4 +1,4 @@
-# Mass-measurament system-based-on-Newton-s-Second-Law
+# Mass-measurament system-based-on-Newton's-Second-Law
 SUSTech SDM273 Intelligent Sensing and Signal Processing
 
 12010508 Yuxiao Hua 12011827 Hongjing Tang
@@ -15,6 +15,13 @@ In this project, we will build a mass measurement system based on Newton's secon
 As shown in the figure below, the trolley is placed on a smooth horizontal plate with accerlator sensor fixed in the carriage. A thin rope is tied at the front end, the other end of the rope, and the other end of the rope is hung over the fixed pulley to hang a small barrel, and weights is placed in the barrel.
 
 ![image](https://github.com/HuaYuXiao/Mass-measurament-system-based-on-Newton-s-Second-Law/assets/117464811/a6031ac0-ae3d-47d6-a924-3ca410e9f9f8)
+
+## Hardware design
+
+Since the cargo compartment of our carrier cart is small and cannot accommodate the water bottle being tested, we utilized AutoCAD to design a model. We then used laser-cut wooden boards to create a bottle holder. The upper part of this holder can accommodate the water bottle, while the lower part can house the accelerometer sensor. The entire assembly fits well inside the cart's cargo compartment.
+![image](https://github.com/HuaYuXiao/Mass-measurament-system-based-on-Newton-s-Second-Law/assets/100033111/76dfc7e5-bce1-4545-a667-63b0d37e7726)
+![110e287ce7c80b546ad7416968514ad](https://github.com/HuaYuXiao/Mass-measurament-system-based-on-Newton-s-Second-Law/assets/100033111/f2e69b7a-8d75-4f26-96da-dfcb9e2a0902)
+
 
 ## Basic principle
 
@@ -269,8 +276,28 @@ From the chart we can find that almost every piece of data is relatively close t
 
 ## Results and analysis
 
+### Test Results
+
+In the last class, we measured the masses of three objects separately. Each object was measured three times, and one value was selected as the final result for each measurement. We then calculated the relative error for each object. The average relative error of our measurements was 4.16%.
+
+|      Standard Value      | 226g  | 435g  | 692g  |
+| :----------------------: | :---: | :---: | :---: |
+| First Measurement Value  | 216g  | 395g  | 691g  |
+| Second Measurement Value | 208g  | 389g  | 706g  |
+| Third Measurement Value  | 232g  | 401g  | 719g  |
+|   Final Selected Value   | 232g  | 401g  | 706g  |
+|      Relative Error      | 2.65% | 7.81% | 2.02% |
 
 
+### Error Analysis.
+
+The main reasons for the occurrence of errors are as follows:
+
+1. Nonlinearity of the model: After a certain threshold value of mass, the change in acceleration becomes less noticeable.
+
+2. The model extrapolates mass, a quantity with significant variation, based on a small change in acceleration. In the experiments, even minor disturbances are amplified, such as noise generated during each run.
+
+3. The experiments are subject to various interferences, leading to significant random errors.
 
 
 
