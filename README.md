@@ -84,14 +84,19 @@ Actually, the three parameters have its physical meanings.
 
 After connecting the sensor to the computer via Bluetooth, we can open the serial monitor to observe the sensor data received through Bluetooth. The data is displayed in hexadecimal format, as shown in the diagram below.
 
+![image](https://github.com/HuaYuXiao/Mass-measurament-system-based-on-Newton-s-Second-Law/assets/100033111/53524047-3d56-44af-a70a-cc55078dcd23)
+
 According to the official technical documentation, the header of the acceleration information packet is 0x51, and the following 6 bits store the low and high bits of the acceleration information for the x, y, and z axes.
 
+![image](https://github.com/HuaYuXiao/Mass-measurament-system-based-on-Newton-s-Second-Law/assets/100033111/88b3df5c-d869-410c-8f42-e5ebee74f305)
 
 ### Data decoding
 
+To obtain the acceleration, you need to concatenate the high and low bits of each axis's acceleration information, treat it as a 16-bit signed number, and perform the necessary calculations.
 
-
-
+$$
+a_x = ((AxH << 8) | AxL) / 32768 * 16
+$$
 
 
 ## Data processing
