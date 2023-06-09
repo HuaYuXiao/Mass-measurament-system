@@ -306,3 +306,10 @@ The main reasons for the occurrence of errors are as follows:
 In order to improeve the extent of automation of the system, we design a GUI window to display the measuring results on the screen, including accerlation and mass. Once **analysis** button is pressed on, the program will start to record data from the sensor. After few seconds, the results will be displayed on the text area. If we want to start another sample test, just press **analysis** will be enough. We do not need to press **Ctrl+F5** on keyboard anymore!
 
 ![image](https://github.com/HuaYuXiao/Mass-measurament-system-based-on-Newton-s-Second-Law/assets/117464811/e27b5bb8-7146-4bc3-a2b0-86804d267453)
+
+## Division of Work
+|     Name       |            Responsibilities             |
+|----------------|----------------------------------------|
+| Yuxiao Hua     | Data processing, filtering, model fitting |
+| Hongjing Tang  | Hardware design, Bluetooth data input    |
+
